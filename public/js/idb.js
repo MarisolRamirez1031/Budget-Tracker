@@ -20,7 +20,7 @@ request.onsuccess = function(event) {
   
     // check if app is online
     if (navigator.onLine) {
-      // uploadBudget(); function not created yet 
+      // uploadTransaction(); function not created yet 
     }
   };
   
@@ -43,7 +43,7 @@ function saveRecord(record) {
 
 function uploadTransaction() {
     // open a transaction on your db
-    const transaction = db.transaction(['new_budget'], 'readwrite');
+    const transaction = db.transaction(['new_transaction'], 'readwrite');
   
     // access your object store
     const transactionObjectStore = transaction.objectStore('new_transaction');
@@ -57,7 +57,7 @@ function uploadTransaction() {
 getAll.onsuccess = function() {
     // if there was data in indexedDb's store, let's send it to the api server
     if (getAll.result.length > 0) {
-      fetch('/api/transactions', {
+      fetch('/api/transaction', {
         method: 'POST',
         body: JSON.stringify(getAll.result),
         headers: {
