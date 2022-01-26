@@ -12,3 +12,19 @@ request.onupgradeneeded = function(event) {
     // create an object store (table) called `new_budget`, set it to have an auto incrementing primary key of sorts 
     db.createObjectStore('new_budget', { autoIncrement: true });
   };
+
+// upon a successful 
+request.onsuccess = function(event) {
+    // when db is successfully created with its object store (from onupgradedneeded event above) or simply established a connection, save reference to db in global variable
+    db = event.target.result;
+  
+    // check if app is online
+    if (navigator.onLine) {
+      // uploadBudget(); function not created yet 
+    }
+  };
+  
+  request.onerror = function(event) {
+    // log error here
+    console.log(event.target.errorCode);
+  };
