@@ -1,7 +1,9 @@
 {
     "name": "Budget Tracker",
     "short_name": "Budget Tracker",
-    "description": "An app that allows you to keep track of your budget by adding or subtracting transactions.",
+    "description": "An app that allows you to keep track of your budget by adding or subtracting a transaction(s).",
+    "start_url": "./index.html",
+    "display": "standalone",
     "background_color": "#01579b",
     "theme_color": "#ffffff",
     "icons": [
