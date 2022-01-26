@@ -20,7 +20,7 @@ request.onsuccess = function(event) {
   
     // check if app is online
     if (navigator.onLine) {
-      // uploadTransaction(); function not created yet 
+        uploadTransaction(); 
     }
   };
   
